@@ -76,26 +76,9 @@ module.exports.create = function (req, res) {
 
 //sing in and create a session for the user
 module.exports.createSession = function(req, res){
-    //steps to authenticate
-    //find the user
-//   User.findOne({email: req.body.email}, function(err, user) {
-//     if(err){console.log('error in creating user while signing in');return}
-//    //handel user found
-//   if (user){
-//  ///handel password which doesn't match
-//    if(user.password != req.body.password){
-//     return res.redirect('back');
-//    }
-//      ///handle session creation
-//       res.cookie('user_id',user.id);
-//       return res.redirect('/user/profile');
+  req.flash('success', 'Logged in Successfully');
 return res.redirect('/');
-// return res.redirect('/user/profile');
-//   }else{
-//   //handel user not found 
-//   return res.redirect('back');
-//   }
-//   });
+
      
 
 }
@@ -103,6 +86,7 @@ return res.redirect('/');
 
 module.exports.destroySession = function(req, res){
     req.logout(function(err){
+        req.flash('success', 'You have Logged out!');
         if(err){
              console.log(err);
          }

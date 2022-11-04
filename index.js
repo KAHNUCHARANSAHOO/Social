@@ -12,6 +12,9 @@ const MongoStore = require('connect-mongo');
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const  middleware = require('./config/middlewares');
+// const flash = require('connect-flash');
+const customMware = require('./config/middlewares');
+
 
 
 app.use(sassMiddleware({
@@ -66,13 +69,17 @@ function(err){
 
 app.use(passport.initialize());
 app.use(passport.session());
-//Flash Message
-//Using Connect flash middleware to store flash message
-app.use(flash())
+
 //Using middleware to send Flash msg form req to res
-app.use(middleware.setFlash)
+
 
 app.use(passport.setAuthenticatedUser);
+//Flash Message
+//Using Connect flash middleware to store flash message
+app.use(flash());
+app.use(middleware.setFlash);
+
+app.use('/', require('./routs'));
 
 //use express router
 app.use('/', require('./routs'));
