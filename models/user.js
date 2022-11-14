@@ -41,7 +41,7 @@ let storage = multer.diskStorage({
 
 // static methods
 userSchema.statics.uploadedAvatar = multer({storage: storage}).single('avatar');
-userSchema.statics.avatarpath = AVATAR_PATH;
+userSchema.statics.avatarPath = AVATAR_PATH;
 
 
 
