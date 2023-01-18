@@ -1,6 +1,7 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
 const commentsMailer = require('../mailers/comments_mailer');
+const { constants } = require('crypto');
 module.exports.create = async function(req, res){
 
     try{
@@ -16,8 +17,9 @@ module.exports.create = async function(req, res){
             post.comments.push(comment);
             post.save();
             
-            comment = await comment.populate('user', 'name email').execPopulate();
-            commentsMailer.newComment(comment);
+           // comment = await comment.populate('user', 'name email').execPopulate();
+        const newComment = await Comment.findById(comment._id).populate('user')
+            commentsMailer.newComment(newComment);
             if (req.xhr){
                 
     
