@@ -12,7 +12,7 @@ const passportJWT = require('./config/passport-jwt-strategy');
 const passportGoogle = require('./config/passport-google-oauth2-strategy');
 
 const MongoStore = require('connect-mongo');
-const sassMiddleware = require('node-sass-middleware');
+// const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const  middleware = require('./config/middlewares');
 // const flash = require('connect-flash');
@@ -20,14 +20,14 @@ const customMware = require('./config/middlewares');
 
 
 
-app.use(sassMiddleware({
-  src: './assets/scss',
-  dest:'./assets/css',
-  debug:true,
-  outputStyle:'extended',
-  prefix:'/css'
+// app.use(sassMiddleware({
+//   src: './assets/scss',
+//   dest:'./assets/css',
+//   debug:true,
+//   outputStyle:'extended',
+//   prefix:'/css'
   
-}));
+// }));
 app.use(express.urlencoded());
 
 app.use(cookieParser());
@@ -62,7 +62,7 @@ app.use(session({
   
   },
   store: MongoStore.create({
-    mongoUrl: 'mongodb://localhost/codeial_development'
+    mongoUrl: 'mongodb://127.0.0.1:27017/codeial_development'
     
 },
 function(err){

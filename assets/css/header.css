@@ -1,11 +1,13 @@
 nav {
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #7fccff;
-  height: 10%; }
+  /* height: 10%;  */
+}
   nav .website-name {
-    margin: 2%;
+    /* margin: 2%; */
     color: white;
     font-size: xx-large; }
     nav .website-name a {
@@ -21,3 +23,44 @@ nav {
     display: block;
     padding: 6px 12px;
     text-decoration: none; }
+  .nav-header{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+  }
+  .input1{
+    width: 100px;
+    height: 40px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 35px;
+    font-size: 19px;
+    color: #e9f4fb;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+  
+  }
+  .input1:hover{
+    border-color: #2691d9;
+    transition: .5s;
+  }
+  .input2{
+    width: 100px;
+    height: 40px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 35px;
+    font-size: 17px;
+    color: #e9f4fb;
+    font-weight: 300;
+    cursor: pointer;
+    outline: none;
+
+  }
+  .input2:hover{
+    border-color: #2691d9;
+    background-color: red;
+    transition: .5s;
+  }

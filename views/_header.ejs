@@ -1,10 +1,10 @@
 
 
 
- <header>
+ <header class="nav-header">
     <nav>
         <div class="website-name">
-           <a href="/"> Codieal</a>
+           <a href="/"> Social</a>
         </div>
 
     
@@ -15,15 +15,15 @@
         
            
                 <%= user.name %></a></li>
-            <li><a href="/user/sign-out">Sign Out</a></li>
+            <li class="input2"><a href="/user/sign-out" style="color: white;">Sign Out</a></li>
 
             <%}else{%>
-                <li>
+                <li class="input1">
                 
-                <a href="/user/sign-in">Sign in</a>
+                <a href="/user/sign-in" style="color: white;">Sign in</a>
                 </li>
-                <li>
-                    <a href="/user/sign-up">Sign Up</a>
+                <li class="input1">
+                    <a href="/user/sign-up" style="color: white;">Sign Up</a>
                 </li>
 
             <% }%>
